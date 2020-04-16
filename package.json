@@ -1,5 +1,5 @@
 {
-  "name": "geodesy",
+  "name": "geodesy-babel",
   "description": "Libraries of geodesy functions",
   "homepage": "http://www.movable-type.co.uk/scripts/geodesy-library.html",
   "repository": {
@@ -27,14 +27,13 @@
   "author": "Chris Veness",
   "version": "2.2.0",
   "license": "MIT",
-  "type": "module",
   "engines": {
     "node": ">=8.0.0"
   },
   "bugs": "https://github.com/chrisveness/geodesy/issues",
   "scripts": {
     "lint": "./node_modules/.bin/eslint -c .eslintrc lib/**",
-    "build": "./node_modules/.bin/babel src --out-dir lib && npm run lint"
+    "build": "./node_modules/.bin/babel ./node_modules/geodesy --out-dir lib && npm run lint"
   },
   "devDependencies": {
     "@babel/cli": "7.8.4",
@@ -55,5 +54,8 @@
     "markdown": {
       "idInHeadings": true
     }
+  },
+  "dependencies": {
+    "geodesy": "^2.2.0"
   }
 }
