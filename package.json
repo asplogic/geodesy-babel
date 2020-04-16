@@ -6,7 +6,24 @@
     "type": "git",
     "url": "https://github.com/chrisveness/geodesy"
   },
-  "keywords": [ "geodesy", "latitude", "longitude", "distance", "bearing", "destination", "haversine", "vincenty", "rhumb", "ellipsoid", "datum", "reference frame", "TRF", "wgs84", "utm", "mgrs" ],
+  "keywords": [
+    "geodesy",
+    "latitude",
+    "longitude",
+    "distance",
+    "bearing",
+    "destination",
+    "haversine",
+    "vincenty",
+    "rhumb",
+    "ellipsoid",
+    "datum",
+    "reference frame",
+    "TRF",
+    "wgs84",
+    "utm",
+    "mgrs"
+  ],
   "author": "Chris Veness",
   "version": "2.2.0",
   "license": "MIT",
@@ -16,59 +33,19 @@
   },
   "bugs": "https://github.com/chrisveness/geodesy/issues",
   "scripts": {
-    "test": "mocha --exit -r esm test/*.js",
-    "lint": "eslint .",
-    "cover": "nyc --reporter=html npm test; rm -r ./.nyc_output",
-    "docs": "jsdoc *.js README.md -d ../../geodesy/docs"
+    "lint": "./node_modules/.bin/eslint -c .eslintrc lib/**",
+    "build": "./node_modules/.bin/babel src --out-dir lib && npm run lint"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.0",
-    "chai": "^4.0.0",
-    "coveralls": "^3.0.0",
-    "eslint": "^6.0.0",
-    "esm": "^3.0.0",
-    "jsdoc": "^3.0.0",
-    "mocha": "^6.0.0",
-    "nyc": "^14.0.0"
+    "@babel/cli": "7.8.4",
+    "@babel/core": "7.8.4",
+    "@babel/node": "7.8.4",
+    "@babel/plugin-transform-runtime": "7.8.3",
+    "@babel/preset-env": "7.8.4",
+    "babel-eslint": "~10.0.3",
+    "eslint": "~6.7.1"
   },
-  "eslintConfig": {
-    "env": {
-      "browser": true,
-      "es6": true,
-      "mocha": true,
-      "node": true
-    },
-    "parser": "babel-eslint",
-    "extends": "eslint:recommended",
-    "globals": {
-      "chai": true,
-      "should": true
-    },
-    "rules": {
-      "array-bracket-spacing": [ "error", "always" ],
-      "comma-dangle": [ "error", "always-multiline" ],
-      "comma-spacing": [ "error" ],
-      "curly": [ "error", "multi-line" ],
-      "indent": [ "error", 4, { "SwitchCase": 1 } ],
-      "key-spacing": [ "error", { "align": "value" } ],
-      "keyword-spacing": [ "error" ],
-      "no-case-declarations": "warn",
-      "no-console": [ "warn", { "allow": [ "error", "info" ] } ],
-      "no-irregular-whitespace": "warn",
-      "no-redeclare": "warn",
-      "no-shadow": "warn",
-      "no-unused-vars": "warn",
-      "no-var": "error",
-      "object-curly-spacing": [ "error", "always" ],
-      "prefer-const": "error",
-      "quotes": [ "error", "single", "avoid-escape" ],
-      "semi": [ "error", "always" ],
-      "space-before-blocks": [ "error", "always" ],
-      "space-in-parens": [ "error" ],
-      "strict": [ "error", "global" ]
-    }
-  },
-  "files": [ 
+  "files": [
     "dms.js",
     "latlon-*.js",
     "mgrs.js",
@@ -77,7 +54,11 @@
     "vector3d.js"
   ],
   "jsdoc": {
-    "plugins": [ "plugins/markdown" ],
-    "markdown": { "idInHeadings": true }
+    "plugins": [
+      "plugins/markdown"
+    ],
+    "markdown": {
+      "idInHeadings": true
+    }
   }
 }
