@@ -46,12 +46,7 @@
     "eslint": "~6.7.1"
   },
   "files": [
-    "dms.js",
-    "latlon-*.js",
-    "mgrs.js",
-    "osgridref.js",
-    "utm.js",
-    "vector3d.js"
+    "lib/*"
   ],
   "jsdoc": {
     "plugins": [
