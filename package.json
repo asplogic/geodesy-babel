@@ -33,7 +33,7 @@
   "bugs": "https://github.com/chrisveness/geodesy/issues",
   "scripts": {
     "lint": "./node_modules/.bin/eslint -c .eslintrc lib/**",
-    "build": "./node_modules/.bin/babel ./node_modules/geodesy --out-dir lib && npm run lint"
+    "build": "mkdir src && cp ./node_modules/geodesy/*.js ./src && ./node_modules/.bin/babel src --out-dir lib && npm run lint"
   },
   "devDependencies": {
     "@babel/cli": "7.8.4",
