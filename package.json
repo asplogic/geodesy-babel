@@ -28,21 +28,21 @@
   "version": "2.2.0",
   "license": "MIT",
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=20.0.0"
   },
   "bugs": "https://github.com/chrisveness/geodesy/issues",
   "scripts": {
-    "lint": "./node_modules/.bin/eslint -c .eslintrc lib/**",
+    "lint": "./node_modules/.bin/eslint -c eslint.config.mjs lib/**",
     "build": "mkdir src && cp ./node_modules/geodesy/*.js ./src && ./node_modules/.bin/babel src --out-dir lib && npm run lint"
   },
   "devDependencies": {
-    "@babel/cli": "7.23.9",
-    "@babel/core": "7.23.9",
-    "@babel/node": "7.23.9",
-    "@babel/plugin-transform-runtime": "7.23.9",
-    "@babel/preset-env": "7.23.9",
-    "@babel/eslint-parser": "7.23.9",
-   "eslint": "^8.56.0"
+    "@babel/cli": "^7.26.4",
+    "@babel/core": "^7.26.10",
+    "@babel/eslint-parser": "^7.26.10",
+    "@babel/node": "^7.26.0",
+    "@babel/plugin-transform-runtime": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "eslint": "^9.25.1"
   },
   "files": [
     "lib/*"
